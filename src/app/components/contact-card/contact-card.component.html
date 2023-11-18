@@ -1,4 +1,7 @@
 <div class="card sticky-top shadow-lg" *ngIf="isNotEmpty()">
+  <div class="card-head text-center">
+    <strong class="text-danger "> {{selectedContact.login.uuid | uppercase | slice:-5}}</strong>
+  </div>
   <img [src]="selectedContact.picture.large" alt="" class="img-thumbnail" />
   <div class="card-body">
     <ul class="list-group">
