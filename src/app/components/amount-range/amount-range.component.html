@@ -1,0 +1,36 @@
+<section class="mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="h3 text-danger">Amount range</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+            voluptas amet accusantium officia. Expedita reprehenderit nobis iure
+            quas ut natus eos aliquid, autem earum nesciunt inventore consequatur
+            quos ratione recusandae?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header bg-secondary text-white">
+              <p class="h4">Amount Range</p>
+            </div>
+            <div class="card-body bg-light">
+              <form>
+               <label for="amount">Amount</label>
+               <input type="range" class="form-range" name="amount" [(ngModel)]="amount" id="" min="5000" max="500000">
+              </form>
+              {{amount | currency:'INR'}}
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

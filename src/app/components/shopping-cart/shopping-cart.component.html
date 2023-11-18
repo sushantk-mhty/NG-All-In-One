@@ -1,0 +1,52 @@
+<section class="mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="h3 text-danger">Shopping Cart</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+            voluptas amet accusantium officia. Expedita reprehenderit nobis iure
+            quas ut natus eos aliquid, autem earum nesciunt inventore consequatur
+            quos ratione recusandae?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mt-3">
+    <div class="container">
+      <div class="col">
+        <table class="table table-hover text-center table-striped">
+          <thead class="table-secondary text-white">
+            <tr>
+              <th>Sno</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let product of products">
+                <td>{{product.sno}}</td>
+                <td> <img [src]="product.image" alt="" width="50" height="50"> </td>
+                <td>{{product.name}}</td>
+                <td>{{product.price | currency :'INR'}}</td>
+                <td>
+                    <i class="fa fa-minus-square" (click)="decrementQty(product.sno)"></i>
+                    {{product.qty}}
+                    <i class="fa fa-plus-square" (click)="incrementQty(product.sno)"></i>
+                </td>
+                <td style="width: 20px;text-align: right;">{{product.price * product.qty | currency :'INR'}}</td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td>Grand Total</td>
+                <td >{{calcGrandTotal() | currency :'INR'}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>

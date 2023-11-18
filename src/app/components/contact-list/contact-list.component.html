@@ -1,0 +1,28 @@
+<section class="mt-3" *ngIf="contacts">
+    <div class="container" *ngIf="contacts.length !=0 && !errorMessage">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover text-center table-striped shadow-lg">
+                  <thead class="table-secondary text-white">
+                    <tr>
+                     <th>SNO #</th>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Phone</th>
+                     <th>Location</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let contact of contacts" (mouseover)="selectContact(contact)">
+                        <td>{{contact.login.uuid | slice:-5}}</td>
+                        <td>{{contact.name.title+" "+ contact.name.first+" "+contact.name.last }}</td>
+                        <td>{{contact.email}}</td>
+                        <td>{{contact.phone}}</td>
+                        <td>{{contact.location.city}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

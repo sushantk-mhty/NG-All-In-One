@@ -1,0 +1,22 @@
+<section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h3 text-danger">Contact App</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim saepe voluptas quia numquam modi pariatur beatae velit ipsam dicta nihil aperiam ducimus, perferendis distinctio nesciunt cumque voluptate, maiores non optio?</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+              <app-contact-list (sendContact)="selectedContact=$event"></app-contact-list>
+            </div>
+            <div class="col-md-3">
+                <app-contact-card [selectedContact]="selectedContact"></app-contact-card>
+            </div>
+        </div>
+    </div>
+</section>
