@@ -11,11 +11,14 @@ export class UsersListComponent implements OnInit {
   //public users:Users[]=[] as Users[];
   public users: Users[] | undefined;
   public errorMessage:string | undefined='';
+  public show:boolean=false;
   private usersService = inject(UsersService);
   constructor() {}
 
   ngOnInit(): void {}
+
   public getUsersData() {
+    this.show=!this.show;
     this.usersService.getUsers().subscribe({
       next: (response: Users[]) => {
         this.users = response;
