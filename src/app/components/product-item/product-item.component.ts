@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
-
 
 @Component({
   selector: 'app-product-item',
